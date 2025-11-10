@@ -1,1 +1,0 @@
-construction-category-speciman = Эксперимент
