@@ -15,7 +15,7 @@ public sealed partial class SatiateThirstEntityEffectsSystem : EntityEffectSyste
     [Dependency] private readonly ThirstSystem _thirst = default!;
     protected override void Effect(Entity<ThirstComponent> entity, ref EntityEffectEvent<SatiateThirst> args)
     {
-        _thirst.ModifyThirst(entity, entity.Comp, args.Effect.Factor * args.Scale);
+        _thirst.ModifyThirst(entity, entity.Comp, args.Effect.Factor * (args.Scale / 2));
     }
 }
 

@@ -52,9 +52,9 @@ public sealed partial class ThirstComponent : Component
     [AutoNetworkedField]
     public Dictionary<ThirstThreshold, float> ThirstThresholds = new()
     {
-        {ThirstThreshold.OverHydrated, 750.0f},
-        {ThirstThreshold.HigHydrated, 600.0f},
-        {ThirstThreshold.Okay, 450.0f},
+        {ThirstThreshold.OverHydrated, 850.0f},
+        {ThirstThreshold.HigHydrated, 700.0f},
+        {ThirstThreshold.Okay, 550.0f},
         {ThirstThreshold.Thirsty, 300.0f},
         {ThirstThreshold.Parched, 150.0f},
         {ThirstThreshold.Dead, 0.0f},
@@ -86,7 +86,7 @@ public sealed partial class ThirstComponent : Component
     public ProtoId<AlertCategoryPrototype> ThirstyCategory = "Thirst";
 
     public static readonly Dictionary<ThirstThreshold, ProtoId<AlertPrototype>> ThirstThresholdAlertTypes = new()
-    {   
+    {
         {ThirstThreshold.OverHydrated, "OverHydrated"},
         {ThirstThreshold.HigHydrated, "HigHydrated"},
         {ThirstThreshold.Thirsty, "Thirsty"},
