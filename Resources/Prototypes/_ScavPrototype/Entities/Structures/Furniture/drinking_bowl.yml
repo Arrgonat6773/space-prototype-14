@@ -8,16 +8,16 @@
   - type: Clickable
   - type: InteractionOutline
   - type: Sprite
-    sprite: Structures/Furniture/sink.rsi
+    sprite: _ScavPrototype/Objects/Structures/Furniture/drinking_bowl.rsi
     layers:
-      - state: sink_stem
+      - state: icon
       - map: [ "enum.SolutionContainerLayers.Fill" ]
-        state: sink-fill-1
+        state: fill-1
         visible: false
   - type: Appearance
   - type: SolutionContainerVisuals
-    maxFillLevels: 1
-    fillBaseName: sink-fill-
+    maxFillLevels: 3
+    fillBaseName: fill-
     solutionName: tank
   - type: SolutionContainerManager
     solutions:
