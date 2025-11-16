@@ -90,3 +90,34 @@
   - type: Construction
     graph: ImprovisedTools
     node: crowbar
+
+- type: entity
+  parent: BaseKnife
+  id: ImprovisedKnife
+  name: самодельный ножик
+  description: Нож сделаный из подручных материалов. Хуже, но лучше чем ничего.
+  components:
+  - type: Execution
+    doAfterDuration: 6.0
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Slash: 9
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Sprite
+    sprite: _ScavPrototype/Objects/Items/improvised_knife.rsi
+    state: icon
+  - type: Item
+    sprite: _ScavPrototype/Objects/Items/improvised_knife.rsi
+    size: Small
+  - type: Tool
+    qualities:
+      - Slicing
+    speedModifier: 0.4
+    useSound:
+      path: /Audio/Items/Culinary/chop.ogg
+  - type: Construction
+    graph: ImprovisedTools
+    node: knife

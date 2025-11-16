@@ -43,6 +43,17 @@
   objectType: Item
 
 - type: construction
+  id: ImprovisedKnifeCraft
+  graph: ImprovisedTools
+  startNode: start
+  targetNode: knife
+  category: construction-category-speciman
+  entityWhitelist:
+    tags:
+    - SpecimanCraft
+  objectType: Item
+
+- type: construction
   id: FoilageRopeCraft
   graph: SpecimanObjects
   startNode: start

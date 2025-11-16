@@ -23,3 +23,16 @@
   - type: Construction
     graph: ImprovisedTools
     node: incompleteCrowbar
+
+- type: entity
+  parent: BaseItem
+  name: незавершенный самодельный ножик
+  description: Кажется его нужно заострить
+  id: IncompleteKnife
+  components:
+  - type: Sprite
+    sprite: _ScavPrototype/Objects/Materials/not_completed.rsi
+    state: knife
+  - type: Construction
+    graph: ImprovisedTools
+    node: incompleteKnife
