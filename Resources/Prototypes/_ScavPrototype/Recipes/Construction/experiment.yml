@@ -32,6 +32,17 @@
   objectType: Item
 
 - type: construction
+  id: ImprovisedCrowbarCraft
+  graph: ImprovisedTools
+  startNode: start
+  targetNode: crowbar
+  category: construction-category-speciman
+  entityWhitelist:
+    tags:
+    - SpecimanCraft
+  objectType: Item
+
+- type: construction
   id: FoilageRopeCraft
   graph: SpecimanObjects
   startNode: start

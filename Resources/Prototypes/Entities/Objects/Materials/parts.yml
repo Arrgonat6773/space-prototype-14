@@ -94,3 +94,14 @@
     state: rods
   - type: Stack
     count: 1
+
+- type: entity
+  parent: PartRodMetal
+  id: PartRodMetal3
+  name: металический стержень
+  suffix: 3
+  components:
+  - type: Sprite
+    state: rods
+  - type: Stack
+    count: 3

@@ -1,0 +1,25 @@
+- type: entity
+  parent: BaseItem
+  name: незавершенный металический стержень
+  description: Кажется его нужно разделить
+  id: RodNotCompleted
+  components:
+  - type: Sprite
+    sprite: _ScavPrototype/Objects/Materials/not_completed.rsi
+    state: rod
+  - type: Construction
+    graph: MetalRod
+    node: notCompleted
+
+- type: entity
+  parent: BaseItem
+  name: незавершенный самодельный лом
+  description: Кажется его нужно обработать
+  id: IncompleteCrowbar
+  components:
+  - type: Sprite
+    sprite: _ScavPrototype/Objects/Materials/not_completed.rsi
+    state: crowbar
+  - type: Construction
+    graph: ImprovisedTools
+    node: incompleteCrowbar

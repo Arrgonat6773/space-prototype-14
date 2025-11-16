@@ -4,13 +4,19 @@
   graph:
     - node: start
       edges:
-        - to: MetalRod
-          completed:
-            - !type:SetStackCount
-              amount: 3
+        - to: notCompleted
           steps:
             - material: Steel
               amount: 2
+              doAfter: 2
+
+    - node: notCompleted
+      entity: RodNotCompleted
+      edges:
+      - to: MetalRod
+        steps:
+          - tool: Slicing
+            doAfter: 4
 
     - node: MetalRod
-      entity: PartRodMetal
+      entity: PartRodMetal3

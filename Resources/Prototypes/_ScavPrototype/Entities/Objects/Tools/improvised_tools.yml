@@ -55,3 +55,38 @@
     graph: ImprovisedTools
     node: wirecutter
 
+- type: entity
+  name: самодельный лом
+  description: Лом сделаный из подручных материалов. Хуже, но лучше чем ничего.
+  parent: BaseCrowbar
+  id: ImprovisedCrowbar
+  components:
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 7
+    soundHit:
+      collection: MetalThud
+  - type: Tool
+    qualities:
+      - Prying
+    speedModifier: 0.4
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+  - type: Sprite
+    sprite: _ScavPrototype/Objects/Items/improvised_crowbar.rsi
+    state: icon
+  - type: Clothing
+    sprite: _ScavPrototype/Objects/Items/improvised_crowbar.rsi
+    quickEquip: false
+    slots:
+    - Belt
+  - type: Item
+    sprite: _ScavPrototype/Objects/Items/improvised_crowbar.rsi
+    size: Small
+    shape:
+    - 0,0,0,1
+  - type: Construction
+    graph: ImprovisedTools
+    node: crowbar

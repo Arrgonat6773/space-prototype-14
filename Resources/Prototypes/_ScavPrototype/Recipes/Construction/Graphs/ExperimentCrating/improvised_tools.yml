@@ -6,7 +6,7 @@
       edges:
         - to: screwdriver
           steps:
-            - material: Steel
+            - material: MetalRod
               amount: 2
             - material: Plastic
               amount: 1
@@ -28,9 +28,28 @@
                 sprite: _ScavPrototype/Objects/Items/foilage_rope.rsi
                 state: icon
               doAfter: 5
+        - to: incompleteCrowbar
+          steps:
+            - material: Steel
+              amount: 2
+            - material: MetalRod
+              amount: 4
+              doAfter: 5
 
     - node: screwdriver
       entity: ImprovisedScrewdriver
 
     - node: wirecutter
       entity: ImprovisedWirecutter
+
+    - node: incompleteCrowbar
+      entity: IncompleteCrowbar
+      edges:
+        - to: crowbar
+          steps:
+            - tool: Slicing
+              doAfter: 5
+            - tool: Cutting
+              doAfter: 3
+    - node: crowbar
+      entity: ImprovisedCrowbar
