@@ -42,3 +42,12 @@
     - type: WiresPanel
     - type: SurveillanceCameraRouter
       subnetFrequency: SurveillanceCameraImplant
+
+- type: entity
+  parent: SurveillanceCameraRouterBase
+  id: SurveillanceCameraRouterContaiment
+  name: маршрутизатор камер (содержание)
+  suffix: Содержание
+  components:
+    - type: SurveillanceCameraRouter
+      subnetFrequency: SurveillanceCameraContaiment
