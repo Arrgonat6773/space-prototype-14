@@ -21,3 +21,42 @@
         - RadioSpeaker
   - type: ActiveListener
     range: 10
+
+- type: entity
+  parent: SurveillanceCameraBase
+  id: SurveillanceCameraPhysicalTesting
+  name: камера
+  suffix: Физ. Тестирование
+  components:
+  - type: DeviceNetwork
+    deviceNetId: Wired
+    receiveFrequencyId: SurveillanceCameraPhysicalTesting
+    transmitFrequencyId: SurveillanceCamera
+  - type: SurveillanceCamera
+    networkSet: true
+
+- type: entity
+  parent: SurveillanceCameraBase
+  id: SurveillanceCameraPsyhoTesting
+  name: камера
+  suffix: Псих. Тестирование
+  components:
+  - type: DeviceNetwork
+    deviceNetId: Wired
+    receiveFrequencyId: SurveillanceCameraPsyhoTesting
+    transmitFrequencyId: SurveillanceCamera
+  - type: SurveillanceCamera
+    networkSet: true
+
+- type: entity
+  parent: SurveillanceCameraBase
+  id: SurveillanceCameraIntermediate
+  name: камера
+  suffix: Промежуточная зона
+  components:
+  - type: DeviceNetwork
+    deviceNetId: Wired
+    receiveFrequencyId: SurveillanceCameraIntermediate
+    transmitFrequencyId: SurveillanceCamera
+  - type: SurveillanceCamera
+    networkSet: true
