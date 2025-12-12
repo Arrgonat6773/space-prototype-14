@@ -81,6 +81,10 @@
         Blunt: 20
     soundHit:
       collection: MetalThud
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
   - type: Item
     size: Ginormous
   - type: MultiHandedItem
@@ -88,4 +92,14 @@
     tags:
     - Barbell
   - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 20
+        mask:
+        - ItemMask
+        restitution: 0.3  # fite me
+        friction: 0.2
 
