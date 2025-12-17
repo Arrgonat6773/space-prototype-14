@@ -28,7 +28,7 @@ namespace Content.Shared.Construction.Steps
             if (string.IsNullOrEmpty(Tool) || !IoCManager.Resolve<IPrototypeManager>().TryIndex(Tool, out ToolQualityPrototype? quality))
                 return;
 
-            examinedEvent.PushMarkup(Loc.GetString("construction-use-tool-entity", ("toolName", Loc.GetString(quality.ToolName))));
+            examinedEvent.PushMarkup(Loc.GetString("construction-use-tool-entity", ("toolName", Loc.GetString(quality.ToolName)), ("toolQuality", QualityLevel))); //Space Prototype change
 
         }
 
@@ -39,7 +39,7 @@ namespace Content.Shared.Construction.Steps
             return new ConstructionGuideEntry()
             {
                 Localization = "construction-presenter-tool-step",
-                Arguments = new (string, object)[]{("tool", quality.ToolName)},
+                Arguments = new (string, object)[]{("tool", quality.ToolName), ("toolQuality", QualityLevel)},
                 Icon = quality.Icon,
             };
         }
