@@ -19,7 +19,7 @@
       collection: MetalThud
   - type: Tool
     qualities:
-      - Prying
+      Prying: 1
     useSound:
       path: /Audio/Items/crowbar.ogg
   - type: ToolTileCompatible

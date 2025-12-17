@@ -12,7 +12,22 @@ public abstract partial class SharedToolSystem
         SubscribeLocalEvent<MultipleToolComponent, ComponentStartup>(OnMultipleToolStartup);
         SubscribeLocalEvent<MultipleToolComponent, ActivateInWorldEvent>(OnMultipleToolActivated);
         SubscribeLocalEvent<MultipleToolComponent, AfterAutoHandleStateEvent>(OnMultipleToolHandleState);
+        //Space Prototype changes start
+        SubscribeLocalEvent<MultipleToolComponent, ComponentInit>(OnInit);
     }
+
+    private void OnInit(Entity<MultipleToolComponent> entity, ref ComponentInit args)
+    {
+        foreach (var entry in entity.Comp.Entries)
+        {
+            entry.Behavior = entry.BehaviorLevels
+            .ToDictionary(
+                pair => pair.Key.Id,
+                pair => pair.Value
+            );
+        }
+    }
+    //Space Prototype changes end
 
     private void OnMultipleToolHandleState(EntityUid uid, MultipleToolComponent component, ref AfterAutoHandleStateEvent args)
     {
@@ -67,18 +82,18 @@ public abstract partial class SharedToolSystem
 
         var current = multiple.Entries[multiple.CurrentEntry];
         tool.UseSound = current.UseSound;
-        tool.Qualities = DefaultQualitiesLevels(current.Behavior); //Space Prototype change
+        tool.Qualities = current.Behavior;
 
         // TODO: Replace this with a better solution later
         if (TryComp<PryingComponent>(uid, out var pryComp))
         {
-            pryComp.Enabled = current.Behavior.Contains("Prying");
+            pryComp.Enabled = current.Behavior.ContainsKey("Prying");
         }
 
         if (playSound && current.ChangeSound != null)
             _audioSystem.PlayPredicted(current.ChangeSound, uid, user);
 
-        if (_protoMan.TryIndex(current.Behavior.First(), out ToolQualityPrototype? quality))
+        if (_protoMan.TryIndex(current.Behavior.First().Key, out ToolQualityPrototype? quality))
             multiple.CurrentQualityName = Loc.GetString(quality.Name);
     }
 }

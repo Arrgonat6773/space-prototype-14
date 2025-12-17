@@ -372,11 +372,10 @@ namespace Content.Server.Construction
                         interactUsing.User,
                         uid,
                         TimeSpan.FromSeconds(toolInsertStep.DoAfter),
-                        new [] { toolInsertStep.Tool },
+                        new Dictionary<string, float> { { toolInsertStep.Tool, toolInsertStep.QualityLevel } },
                         new ConstructionInteractDoAfterEvent(EntityManager, interactUsing),
                         out var doAfter,
-                        toolInsertStep.Fuel,
-                        qualitiesLevelsNeeded : new Dictionary<string, float> { { toolInsertStep.Tool, toolInsertStep.QualityLevel } });
+                        toolInsertStep.Fuel);
 
                     return result && doAfter != null ? HandleResult.DoAfter : HandleResult.False;
                 }

@@ -56,7 +56,7 @@
         Blunt: 0
   - type: Tool
     qualities:
-    - Honking
+      Honking: 1
     useSound:
       collection: BikeHorn
 

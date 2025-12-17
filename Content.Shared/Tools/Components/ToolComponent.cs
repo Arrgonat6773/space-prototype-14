@@ -6,12 +6,19 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Tools.Components;
 
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
 [Access(typeof(SharedToolSystem))]
 public sealed partial class ToolComponent : Component
 {
-    [DataField]
-    public Dictionary<ProtoId<ToolQualityPrototype>, float> Qualities = new(); //Space Prototype change
+    //Space Prototype changes start
+    [ViewVariables]
+    [AutoNetworkedField]
+    public Dictionary<string, float> Qualities = new();
+
+    [DataField("qualities")]
+    public Dictionary<ProtoId<ToolQualityPrototype>, float> QualitiesLevels = new();
+
+    //Space Prototype end
 
     /// <summary>
     ///     For tool interactions that have a delay before action this will modify the rate, time to wait is divided by this value

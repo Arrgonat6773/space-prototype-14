@@ -46,8 +46,19 @@ public abstract partial class SharedToolSystem : EntitySystem
         InitializeWelder();
         SubscribeLocalEvent<ToolComponent, ToolDoAfterEvent>(OnDoAfter);
         SubscribeLocalEvent<ToolComponent, ExaminedEvent>(OnExamine);
+        //Space Prototype changes start
+        SubscribeLocalEvent<ToolComponent, ComponentInit>(OnInit);
     }
 
+    private void OnInit(Entity<ToolComponent> entity, ref ComponentInit args)
+    {
+        entity.Comp.Qualities = entity.Comp.QualitiesLevels
+            .ToDictionary(
+                pair => pair.Key.Id,
+                pair => pair.Value
+            );
+    }
+    //Space Prototype changes end
 
     private void OnDoAfter(EntityUid uid, ToolComponent tool, ToolDoAfterEvent args)
     {
@@ -121,7 +132,7 @@ public abstract partial class SharedToolSystem : EntitySystem
         EntityUid user,
         EntityUid? target,
         float doAfterDelay,
-        [ForbidLiteral] Dictionary<string, float> qualitiesLevelsNeeded,
+        [ForbidLiteral] Dictionary<string, float> qualitiesNeeded,
         DoAfterEvent doAfterEv,
         float fuel = 0,
         ToolComponent? toolComponent = null)
@@ -130,12 +141,11 @@ public abstract partial class SharedToolSystem : EntitySystem
             user,
             target,
             TimeSpan.FromSeconds(doAfterDelay),
-            qualitiesLevelsNeeded,
+            qualitiesNeeded,
             doAfterEv,
             out _,
             fuel,
-            toolComponent,
-            qualitiesLevelsNeeded);
+            toolComponent);
     }
 
     /// <summary>
@@ -160,7 +170,7 @@ public abstract partial class SharedToolSystem : EntitySystem
         EntityUid user,
         EntityUid? target,
         TimeSpan delay,
-        [ForbidLiteral] Dictionary<string, float> qualitiesLevelsNeeded,
+        [ForbidLiteral] Dictionary<string, float> qualitiesNeeded,
         DoAfterEvent doAfterEv,
         out DoAfterId? id,
         float fuel = 0,
@@ -172,7 +182,7 @@ public abstract partial class SharedToolSystem : EntitySystem
 
         //Space Prototype changes start
 
-        if (!CanStartToolUse(tool, user, target, fuel, qualitiesLevelsNeeded, toolComponent))
+        if (!CanStartToolUse(tool, user, target, fuel, qualitiesNeeded, toolComponent))
             return false;
         //Space Prototype changes end
 
@@ -250,27 +260,39 @@ public abstract partial class SharedToolSystem : EntitySystem
         return Resolve(uid, ref tool, false) && tool.Qualities.ContainsKey(quality) && tool.Qualities[quality] >= qualityLevel;
     }
 
-    public Dictionary<string, float> DefaultQualitiesLevels(List<string> qualities)
+    public Dictionary<string, float> DefaultQualitiesLevels(PrototypeFlags<ToolQualityPrototype> qualities)
     {
-        var _qualitiesLevels = new Dictionary<string, float>();
+        var _qualities = new Dictionary<string, float>();
 
         foreach (var quality in qualities)
         {
-            _qualitiesLevels.Add(quality, 1f);
+            _qualities.Add(quality, 1f);
         }
+
+        return _qualities;
+    }
+
+    public bool HasAnyQuality(Dictionary<string, float> qualitiesInitial, PrototypeFlags<ToolQualityPrototype> qualitiesToCheck)
+    {
+        foreach (var quality in qualitiesToCheck)
+        {
+            if (qualitiesInitial.ContainsKey(quality))
+                return true;
+        }
+        return false;
     }
 
     //Space Prototype changes end
 
-    private bool CanStartToolUse(EntityUid tool, EntityUid user, EntityUid? target, float fuel, [ForbidLiteral] Dictionary<string, float> qualitiesLevelsNeeded, ToolComponent? toolComponent = null)
+    private bool CanStartToolUse(EntityUid tool, EntityUid user, EntityUid? target, float fuel, [ForbidLiteral] Dictionary<string, float> qualitiesNeeded, ToolComponent? toolComponent = null)
     {
         if (!Resolve(tool, ref toolComponent))
             return false;
 
         //Space Prototype changes start
-        foreach (var qualityLevel in qualitiesLevelsNeeded)
+        foreach (var quality in qualitiesNeeded)
         {
-            if(!toolComponent.Qualities.ContainsKey(qualityLevel.Key) || toolComponent.Qualities[qualityLevel.Key] < qualityLevel.Value)
+            if(!toolComponent.Qualities.ContainsKey(quality.Key) || toolComponent.Qualities[quality.Key] < quality.Value)
                 return false;
         }
         //Space Prototype changes end

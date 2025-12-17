@@ -14,7 +14,7 @@
     sprite: _ScavPrototype/Objects/Items/improvised_screwdriver.rsi
   - type: Tool
     qualities:
-      - Screwing
+      Screwing: 0.5
     useSound:
       collection: Screwdriver
     speedModifier: 0.4
@@ -40,7 +40,7 @@
     - state: cutters-cutty-thingy
   - type: Tool
     qualities:
-      - Cutting
+      Cutting: 0.5
     useSound:
       path: /Audio/Items/wirecutter.ogg
     speedModifier: 0.4
@@ -70,7 +70,7 @@
       collection: MetalThud
   - type: Tool
     qualities:
-      - Prying
+      Prying: 0.5
     speedModifier: 0.4
     useSound:
       path: /Audio/Items/crowbar.ogg
@@ -114,7 +114,7 @@
     size: Small
   - type: Tool
     qualities:
-      - Slicing
+      Slicing: 0.5
     speedModifier: 0.4
     useSound:
       path: /Audio/Items/Culinary/chop.ogg
