@@ -1,6 +1,38 @@
+#Space Prototype changes start
+- type: entity
+  parent: BaseItem
+  id: BaseTool
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassCrack
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tool
+    damagePerUse:
+      types:
+        Blunt: 1
+#Space Prototype changes end
+
 - type: entity
   name: wirecutter
-  parent: BaseItem
+  parent: BaseTool
   id: Wirecutter
   description: This kills the wire.
   components:
@@ -46,7 +78,7 @@
 
 - type: entity
   name: screwdriver
-  parent: BaseItem
+  parent: BaseTool
   id: Screwdriver
   description: Industrial grade torque in a small screwdriving package.
   components:
@@ -90,7 +122,7 @@
 
 - type: entity
   name: wrench
-  parent: BaseItem
+  parent: BaseTool
   id: Wrench
   description: 'A common tool for assembly and disassembly. Remember: lefty latchy, righty removey.'
   components:
@@ -132,7 +164,7 @@
 
 - type: entity
   name: multitool
-  parent: BaseItem
+  parent: BaseTool
   id: Multitool
   description: An advanced tool to copy, store, and send electrical pulses and signals through wires and machines.
   components:
@@ -398,7 +430,7 @@
 
 - type: entity
   name: omnitool
-  parent: BaseItem
+  parent: BaseTool
   id: Omnitool
   description: A drone's best friend.
   components:
@@ -495,7 +527,7 @@
   - type: Shovel
 
 - type: entity
-  parent: BaseItem
+  parent: BaseTool
   id: RollingPin
   name: rolling pin
   description: A tool used to shape and flatten dough.

@@ -14,7 +14,10 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using System.Linq; //Space Prototype change
+//Space Prototype changes
+using System.Linq;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Shared.Tools.Systems;
 
@@ -35,6 +38,8 @@ public abstract partial class SharedToolSystem : EntitySystem
     [Dependency] private   readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private   readonly TileSystem _tiles = default!;
     [Dependency] private   readonly TurfSystem _turfs = default!;
+
+    [Dependency] private readonly DamageableSystem _damageableSystem = default!; //Space Prototype change
 
     public const string CutQuality = "Cutting";
     public const string PulseQuality = "Pulsing";
@@ -63,7 +68,13 @@ public abstract partial class SharedToolSystem : EntitySystem
     private void OnDoAfter(EntityUid uid, ToolComponent tool, ToolDoAfterEvent args)
     {
         if (!args.Cancelled)
+        {
             PlayToolSound(uid, tool, args.User);
+            //Space Prototype changes start
+            if (TryComp<DamageableComponent>(uid, out var damageable) && tool.DamagePerUse != null)
+                _damageableSystem.ChangeDamage((uid, damageable), tool.DamagePerUse, false, false);
+            //Space Prototype changes end
+        }
 
         var ev = args.WrappedEvent;
         ev.DoAfter = args.DoAfter;
@@ -101,6 +112,11 @@ public abstract partial class SharedToolSystem : EntitySystem
         // Add the localized message to the FormattedMessage object
         message.AddMarkupPermissive(Loc.GetString("tool-component-qualities", ("qualities", qualitiesString)));
         args.PushMessage(message);
+
+        if (!TryComp<DamageableComponent>(ent.Owner, out var damageable))
+            return;
+
+        ToolDamageExamine(ent.Owner, damageable, ref args);
         //Space Prototype changes end
     }
 
@@ -280,6 +296,11 @@ public abstract partial class SharedToolSystem : EntitySystem
                 return true;
         }
         return false;
+    }
+
+    public virtual void ToolDamageExamine(EntityUid uid, DamageableComponent damageable, ref ExaminedEvent args)
+    {
+        //На серверной части
     }
 
     //Space Prototype changes end

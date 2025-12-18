@@ -3,6 +3,8 @@ using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Utility;
 using Robust.Shared.Prototypes;
+//Space Prototype changes
+using Content.Shared.Damage;
 
 namespace Content.Shared.Tools.Components;
 
@@ -18,6 +20,8 @@ public sealed partial class ToolComponent : Component
     [DataField("qualities")]
     public Dictionary<ProtoId<ToolQualityPrototype>, float> QualitiesLevels = new();
 
+    [DataField]
+    public DamageSpecifier? DamagePerUse;
     //Space Prototype end
 
     /// <summary>

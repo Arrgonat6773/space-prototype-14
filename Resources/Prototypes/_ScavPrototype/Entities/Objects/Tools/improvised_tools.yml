@@ -1,6 +1,30 @@
 - type: entity
+  parent: BaseTool
+  id: BaseImprovisedTool
+  abstract: true
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 35
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassCrack
+    - trigger:
+        !type:DamageTrigger
+        damage: 70
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
   name: самодельная отвертка
-  parent: Screwdriver
+  parent: [Screwdriver, BaseImprovisedTool]
   id: ImprovisedScrewdriver
   description: Отвертка сделаная из подручных материалов. Хуже, но лучше чем ничего.
   components:
@@ -28,7 +52,7 @@
 
 - type: entity
   name: самодельные кусачки
-  parent: Wirecutter
+  parent: [Wirecutter, BaseImprovisedTool]
   id: ImprovisedWirecutter
   description: Кусачки сделаные из подручных материалов. Хуже, но лучше чем ничего.
   components:
@@ -58,7 +82,7 @@
 - type: entity
   name: самодельный лом
   description: Лом сделаный из подручных материалов. Хуже, но лучше чем ничего.
-  parent: BaseCrowbar
+  parent: [BaseCrowbar, BaseImprovisedTool]
   id: ImprovisedCrowbar
   components:
   - type: MeleeWeapon
@@ -92,7 +116,7 @@
     node: crowbar
 
 - type: entity
-  parent: BaseKnife
+  parent: [BaseKnife, BaseImprovisedTool]
   id: ImprovisedKnife
   name: самодельный ножик
   description: Нож сделаный из подручных материалов. Хуже, но лучше чем ничего.
