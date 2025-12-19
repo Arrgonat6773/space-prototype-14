@@ -10,14 +10,14 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 75
+        damage: 250
       behaviors:
       - !type:PlaySoundBehavior
         sound:
           collection: GlassCrack
     - trigger:
         !type:DamageTrigger
-        damage: 150
+        damage: 500
       behaviors:
       - !type:PlaySoundBehavior
         sound:
