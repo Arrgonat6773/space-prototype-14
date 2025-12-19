@@ -71,7 +71,9 @@ public abstract partial class SharedToolSystem : EntitySystem
         {
             PlayToolSound(uid, tool, args.User);
             //Space Prototype changes start
-            if (TryComp<DamageableComponent>(uid, out var damageable) && tool.DamagePerUse != null)
+            if (tool.EnergyTool)
+                DoAfterEnergyTool(uid, tool);
+            else if (TryComp<DamageableComponent>(uid, out var damageable) && tool.DamagePerUse != null)
                 _damageableSystem.ChangeDamage((uid, damageable), tool.DamagePerUse, false, false);
             //Space Prototype changes end
         }
@@ -95,19 +97,19 @@ public abstract partial class SharedToolSystem : EntitySystem
 
         // Create a dict to store tool quality names
         //Space Prototype changes start
-        var toolQualitiesLevels = new Dictionary<string, float>();
+        var toolQualities = new Dictionary<string, float>();
 
         // Loop through tool qualities and add localized names to the list
-        foreach (var toolQualityLevel in ent.Comp.Qualities)
+        foreach (var toolQuality in ent.Comp.Qualities)
         {
-            if (_protoMan.TryIndex<ToolQualityPrototype>(toolQualityLevel.Key, out var protoToolQuality))
+            if (_protoMan.TryIndex<ToolQualityPrototype>(toolQuality.Key, out var protoToolQuality))
             {
-                toolQualitiesLevels.Add(Loc.GetString(protoToolQuality.Name), toolQualityLevel.Value);
+                toolQualities.Add(Loc.GetString(protoToolQuality.Name), toolQuality.Value);
             }
         }
 
         // Combine the qualities into a single string and localize the final message
-        var qualitiesString = string.Join(", ", toolQualitiesLevels.Select(kvp => $"{kvp.Key} {kvp.Value}"));
+        var qualitiesString = string.Join(", ", toolQualities.Select(kvp => $"{kvp.Key} {kvp.Value}"));
 
         // Add the localized message to the FormattedMessage object
         message.AddMarkupPermissive(Loc.GetString("tool-component-qualities", ("qualities", qualitiesString)));
@@ -303,6 +305,16 @@ public abstract partial class SharedToolSystem : EntitySystem
         //На серверной части
     }
 
+    public virtual bool CanStartEnergyTool(EntityUid uid, ToolComponent tool, EntityUid user)
+    {
+        //На серверной части
+        return false;
+    }
+
+    public virtual void DoAfterEnergyTool(EntityUid uid, ToolComponent tool)
+    {
+        //На серверной части
+    }
     //Space Prototype changes end
 
     private bool CanStartToolUse(EntityUid tool, EntityUid user, EntityUid? target, float fuel, [ForbidLiteral] Dictionary<string, float> qualitiesNeeded, ToolComponent? toolComponent = null)
@@ -316,6 +328,9 @@ public abstract partial class SharedToolSystem : EntitySystem
             if(!toolComponent.Qualities.ContainsKey(quality.Key) || toolComponent.Qualities[quality.Key] < quality.Value)
                 return false;
         }
+
+        if (toolComponent.EnergyTool && !CanStartEnergyTool(tool, toolComponent, user))
+            return false;
         //Space Prototype changes end
 
         // check if the user allows using the tool

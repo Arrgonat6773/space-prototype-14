@@ -18,9 +18,9 @@ public abstract partial class SharedToolSystem
 
     private void OnInit(Entity<MultipleToolComponent> entity, ref ComponentInit args)
     {
-        foreach (var entry in entity.Comp.Entries)
+        for(int i = 0; i < entity.Comp.Entries.Length; i++)
         {
-            entry.Behavior = entry.BehaviorLevels
+            entity.Comp.Entries[i].Behavior = entity.Comp.Entries[i].BehaviorLevels
             .ToDictionary(
                 pair => pair.Key.Id,
                 pair => pair.Value
@@ -93,7 +93,10 @@ public abstract partial class SharedToolSystem
         if (playSound && current.ChangeSound != null)
             _audioSystem.PlayPredicted(current.ChangeSound, uid, user);
 
-        if (_protoMan.TryIndex(current.Behavior.First().Key, out ToolQualityPrototype? quality))
+        if (current.Behavior.FirstOrDefault().Key == null)
+            return;
+
+        if (_protoMan.TryIndex<ToolQualityPrototype>(current.Behavior.FirstOrDefault().Key, out var quality))
             multiple.CurrentQualityName = Loc.GetString(quality.Name);
     }
 }

@@ -20,8 +20,14 @@ public sealed partial class ToolComponent : Component
     [DataField("qualities")]
     public Dictionary<ProtoId<ToolQualityPrototype>, float> QualitiesLevels = new();
 
-    [DataField]
+    [DataField, ViewVariables]
     public DamageSpecifier? DamagePerUse;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool EnergyTool = false;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float ChargeUse = 5f;
     //Space Prototype end
 
     /// <summary>

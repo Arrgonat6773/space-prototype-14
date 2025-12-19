@@ -28,6 +28,24 @@
     damagePerUse:
       types:
         Blunt: 1
+
+- type: entity
+  parent: BaseItem
+  id: BaseEnergyTool
+  abstract: true
+  components:
+  - type: Tool
+    energyTool: true
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot {}
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
 #Space Prototype changes end
 
 - type: entity
@@ -164,7 +182,7 @@
 
 - type: entity
   name: multitool
-  parent: BaseTool
+  parent: BaseEnergyTool
   id: Multitool
   description: An advanced tool to copy, store, and send electrical pulses and signals through wires and machines.
   components:
@@ -271,7 +289,7 @@
 #Later on these should switch probably switch damage when changing the tool behavior.
 - type: entity
   name: power drill
-  parent: BaseItem
+  parent: BaseEnergyTool
   id: PowerDrill
   description: A simple powered hand drill.
   components:
@@ -430,7 +448,7 @@
 
 - type: entity
   name: omnitool
-  parent: BaseTool
+  parent: BaseEnergyTool
   id: Omnitool
   description: A drone's best friend.
   components:
