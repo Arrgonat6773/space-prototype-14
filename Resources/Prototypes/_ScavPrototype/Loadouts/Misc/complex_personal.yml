@@ -1,0 +1,55 @@
+- type: startingGear
+  id: ComplexScientist
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitScientist
+    back: ClothingBackpackSatchelGenetics
+    shoes: ClothingShoesColorWhite
+    outerClothing: ClothingOuterCoatLab
+    ears: ClothingHeadsetScience
+    gloves: ClothingHandsGlovesNitrile
+    pocket1: Shoker
+    belt: BoxFolderClipboardThreePapers
+    id: SciencePDA
+  storage:
+    back:
+    - InjectorGunFilled
+    - InjectorShellTranquilizer
+    - InjectorShellTranquilizer
+    - InjectorShellTranquilizer
+    - InjectorShellAntisomnin
+    - InjectorShellAntisomnin
+    - SyringeDormitive
+    - HandLabeler
+
+- type: startingGear
+  id: ComplexSecurity
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSecGrey
+    back: ClothingBackpackSatchelSecurity
+    shoes: ClothingShoesBootsJackFilled
+    outerClothing: ClothingOuterArmorBasic
+    ears: ClothingHeadsetSecurity
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesColorBlack
+    pocket1: Shoker
+    pocket2: WeaponPistolMk58
+    belt: ClothingBeltSecurity
+    id: SecurityPDA
+  storage:
+    back:
+    - InjectorGunFilled
+    - InjectorShellTranquilizer
+    - InjectorShellTranquilizer
+    - InjectorShellTranquilizer
+    - InjectorShellAntisomnin
+    - InjectorShellAntisomnin
+    - SyringeDormitive
+    - ChainCuff
+    belt:
+    - Truncheon
+    - Zipties
+    - Zipties
+    - Zipties
+    - Handcuffs
+    - RadioHandheldSecurity
+    - SecurityWhistle

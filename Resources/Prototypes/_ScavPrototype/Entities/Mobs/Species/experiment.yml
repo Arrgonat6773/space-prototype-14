@@ -44,7 +44,10 @@
         Slash: 5
         Structural: 10
   - type: Bloodstream
-    bloodReagent: YellowBlood
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: YellowBlood
+        Quantity: 300
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Speciman
@@ -73,7 +76,7 @@
   - type: PassiveDamage
     allowedStates:
     - Alive
-    damageCap: 60
+    damageCap: 80
     damage:
       types:
         Heat: -0.05
