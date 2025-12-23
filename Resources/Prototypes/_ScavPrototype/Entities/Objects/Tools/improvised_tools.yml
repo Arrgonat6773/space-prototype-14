@@ -1,5 +1,5 @@
 - type: entity
-  name: самодельная отвертка
+  name: самодельная отвёртка
   parent: Screwdriver
   id: ImprovisedScrewdriver
   description: Отвертка сделаная из подручных материалов. Хуже, но лучше чем ничего.
