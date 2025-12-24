@@ -17,8 +17,6 @@
   - type: ItemToggleActiveSound
     activeSound:
       path: /Audio/_ScavPrototype/Machines/shower1.ogg
-      volume: -6
-      range: 5
   - type: Destructible
     thresholds:
       - trigger:
