@@ -17,8 +17,8 @@
   - type: ItemToggleActiveSound
     activeSound:
       path: /Audio/_ScavPrototype/Machines/shower1.ogg
-    volume: -6
-    range: 5
+      volume: -6
+      range: 5
   - type: Destructible
     thresholds:
       - trigger:
@@ -81,8 +81,8 @@
   - type: EmitSoundOnTrigger
     sound:
       path: /Audio/_ScavPrototype/Machines/drying.ogg
-    volume: -6
-    range: 5
+      volume: -6
+      range: 5
   - type: TriggerOnSignal
   - type: DeviceLinkSink
     ports:

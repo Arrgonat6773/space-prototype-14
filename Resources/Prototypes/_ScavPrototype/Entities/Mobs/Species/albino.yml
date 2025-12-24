@@ -86,7 +86,7 @@
         Brute: -0.07
         Toxin: -0.04
   - type: Stamina
-    critThreshold: 90
+    baseCritThreshold: 90
   - type: Thirst
     baseDecayRate: 0.2
   - type: ScaleVisuals

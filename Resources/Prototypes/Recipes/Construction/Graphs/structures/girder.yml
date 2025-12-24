@@ -19,7 +19,7 @@
         - to: start
           completed:
             - !type:SpawnPrototype
-              prototype: MetalRod1
+              prototype: PartRodMetal1
               amount: 4
             - !type:DeleteEntity {}
           conditions:
