@@ -19,7 +19,6 @@
       path: /Audio/_ScavPrototype/Machines/shower1.ogg
       params:
         volume: -2
-        range: 5
   - type: Destructible
     thresholds:
       - trigger:
@@ -84,7 +83,6 @@
       path: /Audio/_ScavPrototype/Machines/drying.ogg
       params:
         volume: -3
-        range: 5
   - type: TriggerOnSignal
   - type: DeviceLinkSink
     ports:
