@@ -14,8 +14,6 @@
     - HeadSide
   - type: Body
     prototype: Milky
-  - type: Sprite
-    drawdepth: Mobs
   - type: Vocal
     sounds:
       Male: MaleSpeciman
