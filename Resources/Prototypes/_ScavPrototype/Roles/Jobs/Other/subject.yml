@@ -1,0 +1,13 @@
+- type: job
+  id: SPComplexTestSubjects
+  name: job-name-SPComplexTestSubjects
+  description: job-description-SPComplexTestSubjects
+  playTimeTracker: SPJobTestSubjects
+#  icon: "JobIcon"
+#  components:
+#  - type: SpeciesRequirement
+#    allowedSpecies:
+#      - Albino
+#      - BoldMilky
+#      - Speciman
+#      - Milky
