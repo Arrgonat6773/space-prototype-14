@@ -121600,11 +121600,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -52.5,-3.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
-      deviceLists:
-      - 12806
     - type: AtmosPipeLayers
       pipeLayer: Tertiary
     - type: AtmosPipeColor
@@ -122688,11 +122683,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 49.5,15.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
-      deviceLists:
-      - 19613
     - type: AtmosPipeLayers
       pipeLayer: Tertiary
     - type: AtmosPipeColor
@@ -122702,11 +122692,6 @@ entities:
     - type: Transform
       pos: 51.5,20.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
-      deviceLists:
-      - 19613
     - type: AtmosPipeLayers
       pipeLayer: Tertiary
     - type: AtmosPipeColor
@@ -123439,11 +123424,6 @@ entities:
     - type: Transform
       pos: -52.5,-6.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
-      deviceLists:
-      - 12806
     - type: AtmosPipeLayers
       pipeLayer: Tertiary
     - type: AtmosPipeColor
@@ -123453,11 +123433,6 @@ entities:
     - type: Transform
       pos: -64.5,-7.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
-      deviceLists:
-      - 12806
     - type: AtmosPipeLayers
       pipeLayer: Tertiary
     - type: AtmosPipeColor
@@ -124287,11 +124262,6 @@ entities:
     - type: Transform
       pos: -53.5,-2.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
-      deviceLists:
-      - 12806
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 11680
@@ -124887,11 +124857,6 @@ entities:
     - type: Transform
       pos: 52.5,20.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
-      deviceLists:
-      - 19613
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 19293
@@ -124975,11 +124940,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 53.5,15.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
-      deviceLists:
-      - 19613
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 19754
@@ -125584,11 +125544,6 @@ entities:
     - type: Transform
       pos: -51.5,-7.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
-      deviceLists:
-      - 12806
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 11702
@@ -125597,11 +125552,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -65.5,-9.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
-      deviceLists:
-      - 12806
     - type: AtmosPipeColor
       color: '#990000FF'
 - proto: GasVolumePump
