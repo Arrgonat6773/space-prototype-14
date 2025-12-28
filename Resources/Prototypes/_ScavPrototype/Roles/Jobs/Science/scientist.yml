@@ -1,0 +1,45 @@
+- type: job
+  id: SPComplexScientist
+  name: job-name-SPComplexScientist
+  description: job-description-SPComplexScientist
+  playTimeTracker: SPJobScientist
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 10h
+  startingGear: SPComplexScientistGear
+  icon: "JobIconScientist"
+#  supervisors: job-supervisors-rd
+  access:
+  - Cryogenics
+  - Medical
+  - Research
+  - Maintenance
+  - External
+  - Chemistry
+#  components:
+#  - type: SpeciesRequirement
+#    allowedSpecies:
+#      - Human
+
+- type: startingGear
+  id: SPComplexScientistGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitScientist
+    back: ClothingBackpackSatchelGenetics
+    shoes: ClothingShoesColorWhite
+    outerClothing: ClothingOuterCoatLab
+    ears: ClothingHeadsetScience
+    gloves: ClothingHandsGlovesNitrile
+    pocket1: Shoker
+    belt: BoxFolderClipboardThreePapers
+    id: SciencePDA
+  storage:
+    back:
+    - InjectorGunFilled
+    - InjectorShellTranquilizer
+    - InjectorShellTranquilizer
+    - InjectorShellTranquilizer
+    - InjectorShellAntisomnin
+    - InjectorShellAntisomnin
+    - SyringeDormitive
+    - HandLabeler
