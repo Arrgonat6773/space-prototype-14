@@ -6,6 +6,9 @@
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 10h
+    - !type:SpeciesRequirement
+      species:
+      - Human
   startingGear: SPComplexSecurityGear
   icon: "JobIconSecurityOfficer"
 #  supervisors: job-supervisors-hos
@@ -34,10 +37,6 @@
   - Atmospherics
   - GenpopEnter
   - GenpopLeave
-#  components:
-#  - type: SpeciesRequirement
-#    allowedSpecies:
-#      - Human
 
 - type: startingGear
   id: SPComplexSecurityGear

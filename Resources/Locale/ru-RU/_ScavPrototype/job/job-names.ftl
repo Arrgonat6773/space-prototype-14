@@ -1,3 +1,3 @@
-job-name-SPComplexTestSubjects = тестовый объект
+job-name-SPComplexTestSubjects = образец
 job-name-SPComplexScientist = учёный комплекса
-job-name-SPComplexSecurityOfficer = офицер охраны комплекса
+job-name-SPComplexSecurityOfficer = охранник комплекса

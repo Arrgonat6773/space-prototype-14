@@ -1,3 +1,3 @@
-job-description-SPComplexTestSubjects = Придумайте, пожалуйста.
-job-description-SPComplexScientist = Придумайте, пожалуйста.
-job-description-SPComplexSecurityOfficer = Придумайте, пожалуйста.
+job-description-SPComplexTestSubjects = Ведите себя хорошо и выполняйте указания ученых.
+job-description-SPComplexScientist = Проводите тесты, тренируйте, и наказывайте образцов.
+job-description-SPComplexSecurityOfficer = Следите за образцами и в редких случаях за учеными.

@@ -4,10 +4,13 @@
   description: job-description-SPComplexTestSubjects
   playTimeTracker: SPJobTestSubjects
 #  icon: "JobIcon"
-#  components:
-#  - type: SpeciesRequirement
-#    allowedSpecies:
-#      - Albino
-#      - BoldMilky
-#      - Speciman
-#      - Milky
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 10h
+    - !type:SpeciesRequirement
+      species:
+      - Albino
+      - BoldMilky
+      - Speciman
+      - Milky
+

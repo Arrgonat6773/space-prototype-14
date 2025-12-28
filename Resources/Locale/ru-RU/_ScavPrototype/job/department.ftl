@@ -1,3 +1,3 @@
-department-SPComplexSecurity = Служба безопасности
+department-SPComplexSecurity = Охрана комплекса
 department-SPComplexScientist = Научный отдел
-department-SPComplexSubjects = Объекты
+department-SPComplexSubjects = Образцы
