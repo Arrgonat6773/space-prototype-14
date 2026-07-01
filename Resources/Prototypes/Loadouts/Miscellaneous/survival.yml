@@ -137,6 +137,7 @@
     - Tajaran
     - Chitinid # DeltaV
     - Shadowkin
+    - Hydrakin
     # ScavPrototype Custom Races
     - Voyager
     - Velvet
@@ -148,6 +149,7 @@
     - Dune
     - BoldMilky
     - Albino
+    - Hydrakin
 
 # Goobstation start
 - type: loadoutEffectGroup
