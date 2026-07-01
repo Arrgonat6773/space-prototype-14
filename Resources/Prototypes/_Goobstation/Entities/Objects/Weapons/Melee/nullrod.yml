@@ -486,7 +486,7 @@
   - type: MultipleTool
     statusShowBehavior: true
     entries:
-    - behavior: 
+    - behavior:
         Screwing: 1
       sprite:
         sprite: _ShitChap/Objects/Weapons/Nullrod/uristhand.rsi
@@ -495,7 +495,7 @@
         path: /Audio/Effects/Emotes/snap3.ogg
       changeSound:
         path: /Audio/Effects/Emotes/snap2.ogg
-    - behavior: Prying
+    - behavior:
         Prying: 1
       sprite:
         sprite: _ShitChap/Objects/Weapons/Nullrod/uristhand.rsi
@@ -529,7 +529,8 @@
         state: icon
       changeSound:
         path: /Audio/Effects/Emotes/snap2.ogg
-    - behavior: Welding
+    - behavior: 
+        Welding: 1
       sprite:
         sprite: _ShitChap/Objects/Weapons/Nullrod/uristhand.rsi
         state: icon

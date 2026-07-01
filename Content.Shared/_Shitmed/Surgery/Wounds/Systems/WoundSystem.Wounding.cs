@@ -268,8 +268,6 @@ public sealed partial class WoundSystem
         }
     }
 
-    #endregion
-
     public DamageGroupPrototype? GetDamageGroupByType(string id)
     {
         return _damageTypeToGroup.GetValueOrDefault(id);

@@ -37,7 +37,7 @@
     - 0,0,0,2
   - type: Tool
     qualities:
-    - Slicing
+      Slicing: 1
   - type: DisarmMalus
   - type: SlasherMassacreMachete
   - type: Prying
@@ -334,7 +334,7 @@
     - 0,0,0,1
   - type: Tool
     qualities:
-    - Prying
+      Prying: 1
     useSound:
       path: /Audio/Items/crowbar.ogg
   - type: Prying
