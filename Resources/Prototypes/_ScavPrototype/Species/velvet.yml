@@ -25,8 +25,8 @@
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
-    Underwear: MobHumanoidAnyMarking
-    Undershirt: MobHumanoidAnyMarking
+    UndergarmentBottom: MobHumanoidAnyMarking
+    UndergarmentTop: MobHumanoidAnyMarking
     Chest: MobVelvetChest
     Groin: MobVelvetGroin
     Eyes: MobHumanoidAnyMarking
@@ -79,10 +79,10 @@
     Chest:
       points: 10
       required: false
-    Underwear:
+    UndergarmentBottom:
       points: 1
       required: false
-    Undershirt:
+    UndergarmentTop:
       points: 1
       required: false
       defaultMarkings: [ VelvetBacklegsBase ]

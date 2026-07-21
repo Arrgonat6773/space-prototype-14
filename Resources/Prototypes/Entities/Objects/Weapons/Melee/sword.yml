@@ -24,7 +24,7 @@
       - Knife
   - type: Tool
     qualities:
-    Slicing: 1.2
+      Slicing: 1.2
   - type: CosmicTransmutable # DeltaV
     transmutesTo: SwordCosmicCult
     requiredGlyphType: CosmicGlyphBlades

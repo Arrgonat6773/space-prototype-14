@@ -81,10 +81,11 @@ public sealed class DeconversionSystem : EntitySystem
             args.Used,
             args.User,
             args.Target,
-            ent.Comp.DeconversionTime,
-            [ent.Comp.ToolRequired],
-            new CleanseOnDoAfterEvent(),
-            out _);
+            ///scav-edit
+            (float) ent.Comp.DeconversionTime.TotalSeconds,
+            (string) ent.Comp.ToolRequired,
+            new CleanseOnDoAfterEvent());
+            ///scav-edit
     }
 
     private void OnDoAfter(Entity<CosmicCenserTargetComponent> uid, ref CleanseOnDoAfterEvent args)

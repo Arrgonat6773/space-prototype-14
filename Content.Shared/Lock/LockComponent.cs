@@ -125,15 +125,10 @@ public sealed partial class LockComponent : Component
     [AutoNetworkedField]
     public TimeSpan UnlockTime;
 
-///Canned-Scav
-    /// <summary>
-    /// Whether the lock should show lock/unlock verbs in the verb menu.
-    /// </summary>
-    [DataField]
-    [AutoNetworkedField]
-    public bool ShowLockVerbs = true;
+    [DataField, AutoNetworkedField]
+    public bool AllowRepeatedLocking = false;
+
 }
-///Canned-Scav
 
 /// <summary>
 /// Event raised on the lock when a toggle is attempted.

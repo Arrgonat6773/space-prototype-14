@@ -36,7 +36,8 @@
       types:
         Cold: 80
   - type: Tool
-    qualities: Censer
+    qualities:
+      Censer: 1.0
   - type: Welder
     fuelSolutionName: Censer
     fuelReagent: Holywater

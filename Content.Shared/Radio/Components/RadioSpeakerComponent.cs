@@ -32,6 +32,9 @@ public sealed partial class RadioSpeakerComponent : Component
     [DataField]
     public bool SpeakNormally;
 
+    [DataField]
+    public bool SpeakLoud;
+
     /// <summary>
     /// Does the radio need to be on a power grid to work?
     /// </summary>

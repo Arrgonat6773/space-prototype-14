@@ -70,7 +70,7 @@
             Brute: -0.8
       - !type:EvenHealthChange
           conditions:
-          - !type:OrganType
+          - !type:MetabolizerTypeCondition
             type: Speciman
           damage:
             Burn: -0.1
@@ -78,7 +78,7 @@
             Brute: -0.1
       - !type:EvenHealthChange
           conditions:
-          - !type:OrganType
+          - !type:MetabolizerTypeCondition
             type: Dune
           damage:
             Burn: -0.1

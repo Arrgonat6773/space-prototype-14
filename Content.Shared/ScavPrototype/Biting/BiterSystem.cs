@@ -130,9 +130,11 @@ public sealed class BiterSystem : EntitySystem
         _damageable.TryChangeDamage(target, biteEntry.Damage, origin: ent.Owner);
 
         if (TryComp<BloodstreamComponent>(ent.Owner, out var attackerStream) &&
-            _solutionContainers.ResolveSolution(ent.Owner, attackerStream.BloodSolutionName, ref attackerStream.BloodSolution))
+            _solutionContainers.ResolveSolution(ent.Owner, attackerStream.BloodSolutionName, ref attackerStream.BloodSolution) &&
+            streamComp.BloodReferenceSolution.Contents.Count > 0)
         {
-            _solutionContainers.TryAddReagent(attackerStream.BloodSolution.Value, streamComp.BloodReagent, biteEntry.TransferAmount, out _);
+            var bloodReagentId = streamComp.BloodReferenceSolution.Contents[0].Reagent.Prototype;
+            _solutionContainers.TryAddReagent(attackerStream.BloodSolution.Value, bloodReagentId, biteEntry.TransferAmount, out _);
         }
 
         _bloodstreamSystem.TryModifyBloodLevel((target, streamComp), -biteEntry.TransferAmount);
