@@ -10,7 +10,7 @@
       effects:
       - !type:PopupMessage
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
           reagent: SleepToxin
           min: 2
         type: Local
@@ -23,7 +23,7 @@
       - !type:ModifyStatusEffect
         effectProto: StatusEffectForcedSleeping
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
           reagent: SleepToxin
           min: 2
         time: 20

@@ -1,6 +1,3 @@
-// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Robust.Shared.Configuration;
@@ -28,7 +25,7 @@ public sealed partial class CCVars
         CVarDef.Create("viewport.minimum_width", 15, CVar.REPLICATED | CVar.SERVER);
 
     public static readonly CVarDef<int> ViewportMaximumWidth =
-        CVarDef.Create("viewport.maximum_width", 21, CVar.REPLICATED | CVar.SERVER);
+        CVarDef.Create("viewport.maximum_width", 30, CVar.REPLICATED | CVar.SERVER);
 
     public static readonly CVarDef<int> ViewportWidth =
         CVarDef.Create("viewport.width", 21, CVar.CLIENTONLY | CVar.ARCHIVE);

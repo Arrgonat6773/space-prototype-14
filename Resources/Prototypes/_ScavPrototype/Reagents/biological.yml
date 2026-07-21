@@ -14,8 +14,8 @@
       - !type:SatiateThirst
         factor: 0.25
         conditions:
-          - !type:OrganType
-            type: Speciman 
+          - !type:MetabolizerTypeCondition
+            type: [Speciman]
     Food:
       effects:
         - !type:AdjustReagent
@@ -23,8 +23,8 @@
           amount: 0.1
         - !type:EvenHealthChange
           conditions:
-          - !type:OrganType
-            type: Dune
+          - !type:MetabolizerTypeCondition
+            type: [Dune]
           damage:
             Burn: -0.45
             Toxin: -0.1
@@ -34,8 +34,8 @@
       effects:
       - !type:HealthChange
         conditions:
-        - !type:OrganType
-          type: Speciman
+        - !type:MetabolizerTypeCondition
+          type: [Speciman]
           inverted: true
         damage:
           types:
