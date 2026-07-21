@@ -16,6 +16,10 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
+///Canned-Scav
+using Content.Shared.Actions.Components;
+using Content.Shared.Actions.Events;
+///Canned-Scav
 
 namespace Content.Shared.Medical;
 
@@ -35,12 +39,24 @@ public sealed class VomitSystem : EntitySystem
     [Dependency] private readonly SharedPuddleSystem _puddle = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
 
+    ///Canned-Scav
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<BodyComponent, TryVomitEvent>(TryBodyVomitSolution);
+        SubscribeLocalEvent<ActionsComponent, VomitActionEvent>(OnVomitAction);
     }
+
+    private void OnVomitAction(EntityUid uid, ActionsComponent component, VomitActionEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        Vomit(args.Performer);
+        args.Handled = true;
+    }
+    ///Canned-Scav
 
     private const float ChemMultiplier = 0.1f;
 
