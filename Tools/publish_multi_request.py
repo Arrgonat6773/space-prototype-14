@@ -22,7 +22,7 @@ RELEASE_DIR = "release"
 # CONFIGURATION PARAMETERS
 # Forks should change these to publish to their own infrastructure.
 #
-ROBUST_CDN_URL = "http://46.44.59.138:5000/"
+ROBUST_CDN_URL = "http://46.44.59.138:27690/"
 
 def main():
     parser = argparse.ArgumentParser()
