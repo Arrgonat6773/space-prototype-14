@@ -15,12 +15,14 @@
   storage:
     back:
     - ClothingHeadHatFlowerWreath
+  groupBy: "hats" # GoobStation
 
 - type: loadout
   id: Hairflower
   storage:
     back:
     - ClothingHeadHatHairflower
+  groupBy: "hats"  # GoobStation
 
 # Headphones
 - type: loadout
@@ -28,6 +30,7 @@
   storage:
     back:
     - ClothingMultipleHeadphones
+  groupBy: "hats" # GoobStation
 
 # Toys
 - type: loadout
@@ -35,12 +38,14 @@
   storage:
     back:
     - PlushieLizard
+  groupBy: "plushies" # GoobStation
 
 - type: loadout
   id: PlushieSpaceLizard
   storage:
     back:
     - PlushieSpaceLizard
+  groupBy: "plushies" # GoobStation
 
 - type: loadout
   id: ThreeCandles
@@ -72,6 +77,13 @@
     - PlushieExperiment
 
 #scav-edit
+# CorvaxGoob-loadouts-start:
+- type: loadout
+  id: HandheldStationMap
+  storage:
+    back:
+    - HandheldStationMap
+# CorvaxGoob-loadouts-end
 
 # Smokeables
 - type: loadout
@@ -445,6 +457,7 @@
   storage:
     back:
     - CardBoxBlack
+  groupBy: "cards" # GoobStation
 
 # Nanotrasen Variant
 - type: loadout
@@ -458,6 +471,7 @@
   storage:
     back:
     - CardBoxNanotrasen
+  groupBy: "cards" # GoobStation
 
 # Candy!
 - type: loadout
@@ -470,7 +484,7 @@
   storage:
     back:
     - FoodSnackLollypopWrapped
-  groupBy: "candy" # CorvaxGoob-loadouts
+  groupBy: "candy" # GoobStation
 
 - type: loadout
   id: FoodSnackLollypopWrappedRainbow
@@ -482,7 +496,7 @@
   storage:
     back:
     - FoodSnackLollypopWrappedRainbow
-  groupBy: "candy" # CorvaxGoob-loadouts
+  groupBy: "candy" # GoobStation
 
 - type: loadout
   id: FoodSnackLollypopWrappedCarp
@@ -495,7 +509,7 @@
   storage:
     back:
     - FoodSnackLollypopWrappedCarp
-  groupBy: "candy" # CorvaxGoob-loadouts
+  groupBy: "candy" # GoobStation
 
 # End GoobStation
 
